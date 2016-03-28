@@ -1,4 +1,4 @@
-/ Defines the interface of the structure of a task
+// Defines the interface of the structure of a task
 interface ITodo {
   id: string,
   title: string,
