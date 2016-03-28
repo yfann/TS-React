@@ -1,10 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
+        "module": "amd",
         "isolatedModules": false,
-        "jsx": "react",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "declaration": false,
@@ -13,7 +11,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors":true,
-        "rootDir":"js",
+        "rootDir":"app",
         "outDir":"build"
     },
     "filesGlob": [
