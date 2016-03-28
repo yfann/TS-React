@@ -1,9 +1,24 @@
 {
     "compilerOptions": {
-        "target":"es5",
-        "module": "amd",
-        "sourceMap":true,
-        "rootDir":"app",
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors":true,
+        "rootDir":"js",
         "outDir":"build"
-    }
+    },
+    "filesGlob": [
+        "**/*.ts",
+        "**/*.tsx",
+        "!node_modules/**"
+    ]
 }
