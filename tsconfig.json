@@ -1,8 +1,10 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "amd",
+        "module": "commonjs",
+        "moduleResolution": "node",
         "isolatedModules": false,
+        "jsx": "react",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "declaration": false,
@@ -10,9 +12,9 @@
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors":true,
-        "rootDir":"app",
-        "outDir":"build"
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "build",
+        "rootDir": "app"
     },
     "filesGlob": [
         "**/*.ts",

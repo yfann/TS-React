@@ -35,6 +35,8 @@ This is sample project for develop react+typescript+less using vs code+webpack.
     - tsd install react --save
     
     - download [react-global.d.ts](https://raw.githubusercontent.com/borisyankov/DefinitelyTyped/master/react/react-global.d.ts) to typings/react
+    
+    - change tsconfig.json
 
 + run application
 
