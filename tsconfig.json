@@ -14,11 +14,15 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "outDir": "build",
-        "rootDir": "app"
+        "rootDir": "app",
+        "sourceMap": true
     },
     "filesGlob": [
         "**/*.ts",
         "**/*.tsx",
         "!node_modules/**"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

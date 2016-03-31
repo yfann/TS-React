@@ -49,10 +49,17 @@ This is sample project for develop react+typescript+less using vs code+webpack.
     - http-server
     
     - http://127.0.0.1:8080/  
+    
    
- + integrated webpack
+ + [integrated webpack](https://www.npmjs.com/package/ts-loader)
  
- + fix eror alert
+    - npm install ts-loader --save-dev
+    
+    - webpack.config.js
+    
+    - tsconfig.json
+    
+ + fix error alert
     
 ##Config
 
