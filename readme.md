@@ -6,6 +6,8 @@ This is sample project for develop react+typescript+less using vs code+webpack.
 
 + install vs code
 
++ install nodejs
+
 + [setup typescript project](https://code.visualstudio.com/Docs/languages/typescript)
 
     - npm install -g typescript(use npm to manage tsc version so remove tsc in path of environment of windows OS)
