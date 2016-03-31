@@ -82,3 +82,4 @@ This is sample project for develop react+typescript+less using vs code+webpack.
 
 #ref
 + [Working with React and TypeScript](http://blog.wolksoftware.com/working-with-react-and-typescript)
++ [TypeScript and webpack](http://www.jbrantly.com/typescript-and-webpack/)
