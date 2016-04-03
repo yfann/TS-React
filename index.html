@@ -14,11 +14,6 @@
     <section class="todoapp"></section>
     <footer class="info">
       <p>Double-click to edit a todo</p>
-      <p>
-        Created by 
-        <a href="http://github.com/remojansen/">Remo H. Jansen</a>
-      </p>
-      <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
     </footer>
 
     <script type="text/javascript" 
@@ -28,12 +23,29 @@
     <script type="text/javascript" 
             src="node_modules/director/build/director.js">
     </script>
-
-    <script type="text/javascript" src="build/constants.js"></script>
-    <script type="text/javascript" src="build/utils.js"></script>
-    <script type="text/javascript" src="build/todoModel.js"></script>
-    <script type="text/javascript" src="build/todoItem.js"></script>
-    <script type="text/javascript" src="build/footer.js"></script>
-    <script type="text/javascript" src="build/app.js"></script>
+  <!--bundle-->  
+   <script type="text/javascript" 
+            src="build/bundle.js">
+    </script>
+  <!--modules-->  
+  <!--order is important-->  
+    <!--<script type="text/javascript" 
+            src="build/modules/constants.js">
+    </script>
+    <script type="text/javascript" 
+            src="build/modules/footer.js">
+    </script>
+    <script type="text/javascript" 
+            src="build/modules/todoItem.js">
+    </script>
+    <script type="text/javascript" 
+            src="build/modules/todoModel.js">
+    </script>
+    <script type="text/javascript" 
+            src="build/modules/utils.js">
+    </script>
+    <script type="text/javascript" 
+            src="build/modules/app.js">
+    </script>-->
   </body>
 </html>

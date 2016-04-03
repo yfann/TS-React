@@ -1,12 +1,14 @@
-/// <reference path="../typings/react/react-global.d.ts" />
-/// <reference path="./interfaces.d.ts"/>
+/// <reference path="../interfaces/interfaces.d.ts"/>
+/// <reference path="../../typings/react/react-global.d.ts"/>
 
-namespace app.components {
+import U=require('./utils');
+import Cons=require('./constants');
+
 
   export class TodoFooter extends React.Component<ITodoFooterProps, {}> {
 
     public render() {
-      var activeTodoWord = app.miscelanious.Utils.pluralize(this.props.count, 'item');
+      var activeTodoWord = U.Utils.pluralize(this.props.count, 'item');
       var clearButton = null;
 
       if (this.props.completedCount > 0) {
@@ -31,7 +33,7 @@ namespace app.components {
             <li>
               <a
                 href="#/"
-                className={cx({selected: nowShowing === app.constants.ALL_TODOS})}>
+                className={cx({selected: nowShowing === Cons.ALL_TODOS})}>
                   All
               </a>
             </li>
@@ -39,7 +41,7 @@ namespace app.components {
             <li>
               <a
                 href="#/active"
-                className={cx({selected: nowShowing === app.constants.ACTIVE_TODOS})}>
+                className={cx({selected: nowShowing === Cons.ACTIVE_TODOS})}>
                   Active
               </a>
             </li>
@@ -47,7 +49,7 @@ namespace app.components {
             <li>
               <a
                 href="#/completed"
-                className={cx({selected: nowShowing === app.constants.COMPLETED_TODOS})}>
+                className={cx({selected: nowShowing === Cons.COMPLETED_TODOS})}>
                   Completed
               </a>
             </li>
@@ -58,4 +60,3 @@ namespace app.components {
     }
   }
 
-}

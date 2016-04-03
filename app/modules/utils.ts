@@ -1,4 +1,3 @@
-namespace app.miscelanious {
 
   export class Utils {
 
@@ -51,4 +50,3 @@ namespace app.miscelanious {
     }
 
   }
-}

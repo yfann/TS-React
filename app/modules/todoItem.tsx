@@ -1,7 +1,7 @@
-/// <reference path="../typings/react/react-global.d.ts" />
-/// <reference path="./interfaces.d.ts"/>
+/// <reference path="../interfaces/interfaces.d.ts"/>
+/// <reference path="../../typings/react/react-global.d.ts"/>
 
-namespace app.components {
+import Consts=require('./constants');
 
   export class TodoItem extends React.Component<ITodoItemProps, ITodoItemState> {
 
@@ -27,10 +27,10 @@ namespace app.components {
     }
 
     public handleKeyDown(event) {
-      if (event.which === app.constants.ESCAPE_KEY) {
+      if (event.which === Consts.ESCAPE_KEY) {
         this.setState({editText: this.props.todo.title});
         this.props.onCancel(event);
-      } else if (event.which === app.constants.ENTER_KEY) {
+      } else if (event.which === Consts.ENTER_KEY) {
         this.handleSubmit(event);
       }
     }
@@ -95,4 +95,3 @@ namespace app.components {
     }
   }
 
-}

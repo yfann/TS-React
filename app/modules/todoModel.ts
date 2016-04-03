@@ -1,7 +1,6 @@
-/// <reference path="../typings/react/react-global.d.ts" />
-/// <reference path="./interfaces.d.ts"/>
+/// <reference path="../interfaces/interfaces.d.ts"/>
 
-namespace app.models {
+import U=require('./utils');
 
   export class TodoModel implements ITodoModel {
 
@@ -11,7 +10,7 @@ namespace app.models {
 
     constructor(key) {
       this.key = key;
-      this.todos = app.miscelanious.Utils.store(key);
+      this.todos = U.Utils.store(key);
       this.onChanges = [];
     }
 
@@ -23,13 +22,13 @@ namespace app.models {
     }
 
     public inform() {
-      app.miscelanious.Utils.store(this.key, this.todos);
+      U.Utils.store(this.key, this.todos);
       this.onChanges.forEach(function (cb) { cb(); });
     }
 
     public addTodo(title : string) {
       this.todos = this.todos.concat({
-        id: app.miscelanious.Utils.uuid(),
+        id: U.Utils.uuid(),
         title: title,
         completed: false
       });
@@ -45,7 +44,7 @@ namespace app.models {
       // map() and filter() everywhere instead of 
       // mutating the array or todo items themselves.
       this.todos = this.todos.map<ITodo>((todo : ITodo) => {
-        return app.miscelanious.Utils.extend(
+        return U.Utils.extend(
           {}, todo, {completed: checked}
         );
       });
@@ -57,7 +56,7 @@ namespace app.models {
       this.todos = this.todos.map<ITodo>((todo : ITodo) => {
         return todo !== todoToToggle ?
           todo :
-          app.miscelanious.Utils.extend(
+          U.Utils.extend(
             {}, todo, {completed: !todo.completed}
           );
       });
@@ -75,7 +74,7 @@ namespace app.models {
 
     public save(todoToSave, text) {
       this.todos = this.todos.map(function (todo) {
-        return todo !== todoToSave ? todo : app.miscelanious.Utils.extend({}, todo, {title: text});
+        return todo !== todoToSave ? todo : U.Utils.extend({}, todo, {title: text});
       });
 
       this.inform();
@@ -90,4 +89,3 @@ namespace app.models {
     }
   }
 
-}

@@ -1,6 +1,8 @@
+
 module.exports = {
-  entry: './app.ts',
+  entry: './app/index',
   output: {
+    path:'./build',
     filename: 'bundle.js'
   },
   resolve: {
@@ -10,7 +12,7 @@ module.exports = {
   module: {
     loaders: [
       // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader` 
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+      { test: /\.ts(x?)$/, loader: 'ts-loader' }
     ]
   }
 }

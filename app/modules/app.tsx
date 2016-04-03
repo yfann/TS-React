@@ -1,5 +1,6 @@
-/// <reference path="../typings/react/react-global.d.ts" />
-/// <reference path="./interfaces.d.ts"/>
+/// <reference path="../interfaces/interfaces.d.ts"/>
+/// <reference path="../../typings/react/react-global.d.ts"/>
+
 
 // We should have installed a type declaration file but
 // for the director npm package but it is not available
@@ -7,18 +8,22 @@
 // errors for now.
 declare var Router : any;
 
-var TodoModel = app.models.TodoModel;
-var TodoFooter = app.components.TodoFooter;
-var TodoItem = app.components.TodoItem;
+import TM=require('./todoModel');
+import Footer=require('./footer');
+import TI=require('./todoItem');
+import Cons=require('./constants');
 
-namespace app.components {
+var TodoModel = TM.TodoModel;
+var TodoFooter = Footer.TodoFooter;
+var TodoItem = TI.TodoItem;
+
 
   export class TodoApp extends React.Component<IAppProps, IAppState> {
 
     constructor(props : IAppProps) {
       super(props);
       this.state = {
-        nowShowing: app.constants.ALL_TODOS,
+        nowShowing: Cons.ALL_TODOS,
         editing: null
       };
     }
@@ -31,15 +36,15 @@ namespace app.components {
       // the router observes changes in the URL and 
       // triggers some component's event accordingly 
       var router = Router({
-        '/': setState.bind(this, {nowShowing: app.constants.ALL_TODOS}),
-        '/active': setState.bind(this, {nowShowing: app.constants.ACTIVE_TODOS}),
-        '/completed': setState.bind(this, {nowShowing: app.constants.COMPLETED_TODOS})
+        '/': setState.bind(this, {nowShowing: Cons.ALL_TODOS}),
+        '/active': setState.bind(this, {nowShowing: Cons.ACTIVE_TODOS}),
+        '/completed': setState.bind(this, {nowShowing: Cons.COMPLETED_TODOS})
       });
       router.init('/');
     }
 
     public handleNewTodoKeyDown(event) {
-      if (event.keyCode !== app.constants.ENTER_KEY) {
+      if (event.keyCode !== Cons.ENTER_KEY) {
         return;
       }
 
@@ -93,9 +98,9 @@ namespace app.components {
 
       var shownTodos = todos.filter(function (todo) {
         switch (this.state.nowShowing) {
-        case app.constants.ACTIVE_TODOS:
+        case Cons.ACTIVE_TODOS:
           return !todo.completed;
-        case app.constants.COMPLETED_TODOS:
+        case Cons.COMPLETED_TODOS:
           return todo.completed;
         default:
           return true;
@@ -167,10 +172,9 @@ namespace app.components {
       );
     }
   }
-}
+
 
 var model = new TodoModel('react-todos');
-var TodoApp = app.components.TodoApp;
 
 function render() {
   React.render(

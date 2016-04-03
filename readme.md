@@ -10,7 +10,7 @@ This is sample project for develop react+typescript+less using vs code+webpack.
 
 + [setup typescript project](https://code.visualstudio.com/Docs/languages/typescript)
 
-    - npm install -g typescript(use npm to manage tsc version so remove tsc in path of environment of windows OS)
+    - cmd:npm install -g typescript(use npm to manage tsc version so remove tsc in path of environment of windows OS)
 
     - create tsconfig.json
     
@@ -26,38 +26,42 @@ This is sample project for develop react+typescript+less using vs code+webpack.
 
     - create package.json
     
-    - npm install
+    - cmd:npm install
     
 + add React Type definitions
 
-    - npm install tsd -g
+    - cmd:npm install tsd -g
     
-    - tsd init
+    - cmd:tsd init
     
-    - tsd install react --save
-    
-    - download [react-global.d.ts](https://raw.githubusercontent.com/borisyankov/DefinitelyTyped/master/react/react-global.d.ts) to typings/react
+    - cmd:tsd install react --save
+        
+      ??download [react-global.d.ts](https://raw.githubusercontent.com/borisyankov/DefinitelyTyped/master/react/react-global.d.ts) to typings/react
     
     - change tsconfig.json
     
-      add jsx
+      set jsx
 
 + run application
 
-    - npm install -g http-server
+    - cmd:npm install -g http-server
     
-    - http-server
+    - cmd:http-server
     
     - http://127.0.0.1:8080/  
     
    
  + [integrated webpack](https://www.npmjs.com/package/ts-loader)
  
-    - npm install ts-loader --save-dev
+    - cmd:npm install -g webpack
+ 
+    - cmd:npm install ts-loader --save-dev
     
-    - webpack.config.js
+    - create webpack.config.js
     
-    - tsconfig.json
+    - define entry file (using CMD, not with namespace)
+    
+    - cmd:webpack
     
  + fix error alert
     
@@ -66,6 +70,8 @@ This is sample project for develop react+typescript+less using vs code+webpack.
 ###[tsconfig.json](http://www.typescriptlang.org/docs/handbook/tsconfig.json.html)
 
 ###tasks.json
+
+###[Defined Type](http://definitelytyped.org/)
 
 ##Command
 
@@ -83,3 +89,4 @@ This is sample project for develop react+typescript+less using vs code+webpack.
 #ref
 + [Working with React and TypeScript](http://blog.wolksoftware.com/working-with-react-and-typescript)
 + [TypeScript and webpack](http://www.jbrantly.com/typescript-and-webpack/)
++ [ES6 modules with TypeScript and webpack](http://www.jbrantly.com/es6-modules-with-typescript-and-webpack/)
